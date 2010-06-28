@@ -40,3 +40,17 @@ Finally, you can include +HAL+ into your classes to get +can+ and
         can!(current_user) {|can| can.edit_user?(current_user) }
       end
     end
+
+== Installing
+
+As a RubyGem
+
+    gem install hal
+
+For rails 2.3, add to your config/environment.rb:
+
+    config.gem "hal", :lib => "hal/rails"
+
+For rails 3, add to your Gemfile:
+
+    gem "hal", :require => "hal/rails"
