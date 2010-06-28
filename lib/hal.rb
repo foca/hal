@@ -48,7 +48,7 @@ module HAL
   # HAL::ICantLetYouDoThat.
   #
   #     enforce(dave) {|can| can.open_the_pod_bay_doors? } #=> Raises
-  def self.enforce(object, &block)
+  def self.can!(object, &block)
     block.call(can(object)) ||
       raise(ICantLetYouDoThat, "#{object.inspect} can't do that")
   end
@@ -60,9 +60,9 @@ module HAL
   end
 
   # Helper method you can include in your own classes to have a nicer API for
-  # enforcing permissions. See HAL.enforce
-  def enforce(object, &block)
-    HAL.enforce(object, &block)
+  # enforcing permissions. See HAL.can!
+  def can!(object, &block)
+    HAL.can!(object, &block)
   end
 
   def self.subjects

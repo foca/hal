@@ -47,7 +47,7 @@ describe HAL do
   end
 
   it "raises an exception when enforcing an invalid rule" do
-    expect { enforce(john) {|can| can.write? } }.to raise_exception(HAL::ICantLetYouDoThat)
+    expect { can!(john) {|can| can.write? } }.to raise_exception(HAL::ICantLetYouDoThat)
   end
 
   it "makes available the subject object inside the rules" do

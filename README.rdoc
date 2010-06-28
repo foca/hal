@@ -18,13 +18,13 @@ of said classes. For example:
 When defining rules you can access a +subject+ method, which will reference
 whatever object you pass to +can+.
 
-You also have a more powerful version of +can+, called +enforce+, which takes a
+You also have a more powerful version of +can+, called +can!+, which takes a
 block and will raise +HAL::ICantLetYouDoThat+ if the block evaluates to false:
 
-    HAL.enforce(dave) {|can| can.open_the_pod_bay_doors? } #=> raises!
+    HAL.can!(dave) {|can| can.open_the_pod_bay_doors? } #=> raises!
 
-Finally, you can include +HAL+ into your classes to get +can+ and +enforce+ as
-helper methods.
+Finally, you can include +HAL+ into your classes to get +can+ and
+<tt>can!</tt> as helper methods.
 
     class UsersController < ApplicationController
       include HAL
@@ -36,6 +36,6 @@ helper methods.
       end
 
       def check_permissions
-        enforce(current_user) {|can| can.edit_user?(current_user) }
+        can!(current_user) {|can| can.edit_user?(current_user) }
       end
     end
