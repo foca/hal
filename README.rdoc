@@ -32,12 +32,10 @@ Finally, you can include +HAL+ into your classes to get +can+ and
 
       before_filter :check_permissions, :only => [:edit, :update, :destroy]
 
-      rescue_from HAL::ICantLetYouDoThat do
-        redirect_to users_url, :alert => "Sorry Dave, I can't let you do that"
-      end
-
       def check_permissions
-        can!(current_user) {|can| can.edit_user?(current_user) }
+        unless can(current_user).edit_user?(current_user)
+          redirect_to users_path, :alert => "I can't let you do that, Dave"
+        end
       end
     end
 
