@@ -18,8 +18,9 @@ of said classes. For example:
 When defining rules you can access a +subject+ method, which will reference
 whatever object you pass to +can+.
 
-You also have a more powerful version of +can+, called +can!+, which takes a
-block and will raise +HAL::ICantLetYouDoThat+ if the block evaluates to false:
+You also have a more powerful version of <tt>can</tt>, called <tt>can!</tt>,
+which takes a block and will raise <tt>HAL::ICantLetYouDoThat</tt> if the
+block evaluates to false:
 
     HAL.can!(dave) {|can| can.open_the_pod_bay_doors? } #=> raises!
 
