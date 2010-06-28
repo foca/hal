@@ -28,8 +28,8 @@ spec = Gem::Specification.new do |s|
   s.homepage          = "http://github.com/foca/hal"
 
   s.has_rdoc          = true
-  s.extra_rdoc_files  = %w(README)
-  s.rdoc_options      = %w(--main README)
+  s.extra_rdoc_files  = %w(README.rdoc)
+  s.rdoc_options      = %w(--main README.rdoc)
 
   # Add any extra files to include in the gem (like your README)
   s.files             = %w() + Dir.glob("{spec,lib/**/*}")
@@ -64,9 +64,9 @@ task :package => :gemspec
 
 # Generate documentation
 Rake::RDocTask.new do |rd|
-  rd.rdoc_files.include("README", "LICENSE", "lib/**/*.rb")
+  rd.rdoc_files.include("README.rdoc", "LICENSE", "lib/**/*.rb")
   rd.rdoc_dir = "doc"
-  rd.main = "README"
+  rd.main = "README.rdoc"
 end
 
 desc 'Clear out RDoc and generated packages'

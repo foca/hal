@@ -6,12 +6,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicolas Sanguinetti"]
-  s.date = %q{2010-06-27}
+  s.date = %q{2010-06-28}
   s.email = %q{hi@nicolassanguinetti.info}
-  s.extra_rdoc_files = ["README"]
-  s.files = ["spec", "lib/hal", "lib/hal/rails.rb", "lib/hal/version.rb", "lib/hal.rb", "README"]
+  s.extra_rdoc_files = ["README.rdoc"]
+  s.files = ["spec", "lib/hal", "lib/hal/rails.rb", "lib/hal/version.rb", "lib/hal.rb", "README.rdoc"]
   s.homepage = %q{http://github.com/foca/hal}
-  s.rdoc_options = ["--main", "README"]
+  s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Simple and minimal authorization framework for ruby}
